@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tonci\\source\\repos\\Tutorial\\Tutorial\\Tutorial.csproj": {}
+    "D:\\fork2\\Tutorijal\\Tutorial\\Tutorial.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tonci\\source\\repos\\Tutorial\\Tutorial\\Tutorial.csproj": {
+    "D:\\fork2\\Tutorijal\\Tutorial\\Tutorial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tonci\\source\\repos\\Tutorial\\Tutorial\\Tutorial.csproj",
+        "projectUniqueName": "D:\\fork2\\Tutorijal\\Tutorial\\Tutorial.csproj",
         "projectName": "Tutorial",
-        "projectPath": "C:\\Users\\Tonci\\source\\repos\\Tutorial\\Tutorial\\Tutorial.csproj",
+        "projectPath": "D:\\fork2\\Tutorijal\\Tutorial\\Tutorial.csproj",
         "packagesPath": "C:\\Users\\Tonci\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tonci\\source\\repos\\Tutorial\\Tutorial\\obj\\",
+        "outputPath": "D:\\fork2\\Tutorijal\\Tutorial\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

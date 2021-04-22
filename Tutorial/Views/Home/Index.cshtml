@@ -1,8 +1,34 @@
-﻿@{
+﻿@model Tutorial.ViewModel.MovieViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <form method="post" role="form">
+        <div class="controls">
+            <div class="form-group">
+                <label>Naziv filma</label><br>
+                <input type="text" asp-for="@Model.MovieName" name="MovieName" class="form-control" /><br />
+            </div>
+            <div class="form-group">
+                <label>Godina filma</label><br>
+                <input type="text" asp-for="@Model.MovieYear" name="MovieYear" class="form-control" /><br />
+            </div>
+            <div class="form-group">
+                <label>Skraćenica</label><br>
+                <input type="text" asp-for="@Model.MovieAbbrevation" name="MovieAbbrevation" class="form-control" /><br />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-success btn-send" />
+            </div>
+        </div>
+    </form>
+   
+    @foreach (var item in ViewBag.MovieList)
+    {
+        <a asp-controller="Details" asp-action="Index" asp-route-id="@item.MovieID">@item.MovieName</a><a href="/Home/DeleteMovie?id=@item.MovieID"> Obrisi</a><br />
+    }
+
 </div>
