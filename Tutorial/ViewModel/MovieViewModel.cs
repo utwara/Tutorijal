@@ -6,9 +6,11 @@ namespace Tutorial.ViewModel
 {
     public class MovieViewModel
     {
+        [Key]
+        public int MovieID { get; set; }
         public string MovieName { get; set; }
         public string MovieYear { get; set; }
         public string MovieAbbrevation { get; set; }
-        public int MovieID { get; set; }
+       
     }
 }

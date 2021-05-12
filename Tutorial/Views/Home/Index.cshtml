@@ -4,31 +4,67 @@
     ViewData["Title"] = "Home Page";
 }
 
+@if (TempData["SUCCESS_MESSAGE"] != null)
+{
+    if (TempData["SUCCESS_MESSAGE"].ToString() == "TRUE")
+    {
+        <div class="alert alert-success" role="alert">Uspješno unesen film!</div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">Dogodila se greška!</div>
+    }
+}
+
+@if (TempData["SUCCESS_MESSAGE_DELETE"] != null)
+{
+    if (TempData["SUCCESS_MESSAGE_DELETE"].ToString() == "TRUE")
+    {
+        <div class="alert alert-success" role="alert">Film uspješno obrisan!</div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">Dogodila se greška!</div>
+    }
+}
+
+@if (TempData["SUCCESS_MESSAGE_UPDATE"] != null)
+{
+    if (TempData["SUCCESS_MESSAGE_UPDATE"].ToString() == "TRUE")
+    {
+        <div class="alert alert-success" role="alert">Promjene uspješno spremljene!</div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">Dogodila se greška!</div>
+    }
+}
+
 <div class="text-center">
 
-    <form method="post" role="form">
+    <form asp-action="Create">
         <div class="controls">
             <div class="form-group">
                 <label>Naziv filma</label><br>
-                <input type="text" asp-for="@Model.MovieName" name="MovieName" class="form-control" /><br />
+                <input type="text" asp-for="MovieName" class="form-control" /><br />
             </div>
             <div class="form-group">
                 <label>Godina filma</label><br>
-                <input type="text" asp-for="@Model.MovieYear" name="MovieYear" class="form-control" /><br />
+                <input type="text" asp-for="MovieYear" class="form-control" /><br />
             </div>
             <div class="form-group">
                 <label>Skraćenica</label><br>
-                <input type="text" asp-for="@Model.MovieAbbrevation" name="MovieAbbrevation" class="form-control" /><br />
+                <input type="text" asp-for="MovieAbbrevation" class="form-control" /><br />
             </div>
             <div class="form-group">
                 <input type="submit" value="Dodaj" class="btn btn-success btn-send" />
             </div>
         </div>
     </form>
-   
+
     @foreach (var item in ViewBag.MovieList)
     {
-        <a asp-controller="Details" asp-action="Index" asp-route-id="@item.MovieID">@item.MovieName</a><a href="/Home/DeleteMovie?id=@item.MovieID"> Obrisi</a><br />
+        <a asp-controller="Details" asp-action="Index" asp-route-id="@item.MovieID">@item.MovieName</a><p style="display:inline">  -  </p><a href="/Home/DeleteMovie?id=@item.MovieID"> Obrisi</a><p style="display:inline">  -  </p><a asp-action="Edit" asp-route-id="@item.MovieID">Uredi</a><br />
     }
 
 </div>

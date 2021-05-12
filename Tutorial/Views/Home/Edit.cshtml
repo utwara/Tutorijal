@@ -1,0 +1,35 @@
+﻿@model Tutorial.ViewModel.MovieViewModel
+
+@{
+}
+<h1>Uređivanje filma</h1>
+
+<div class="text-center">
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="MovieID" />
+        <div class="controls">
+            <div class="form-group">
+                <label>Naziv filma</label><br>
+                <input type="text" asp-for="MovieName" class="form-control" /><br />
+            </div>
+            <div class="form-group">
+                <label>Godina filma</label><br>
+                <input type="text" asp-for="MovieYear" class="form-control" /><br />
+            </div>
+            <div class="form-group">
+                <label>Skraćenica</label><br>
+                <input type="text" asp-for="MovieAbbrevation" class="form-control" /><br />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Spremi" class="btn btn-success btn-send" />
+            </div>
+        </div>
+    </form>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
